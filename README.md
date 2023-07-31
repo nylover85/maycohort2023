@@ -1,1 +1,5 @@
-# maycohort2023
+city_1 = 'New York City'
+city_2 = 'Los Angeles'
+city_3 = 'Chicago'
+city_4 = 'Houston'
+city_5 = 'Phoenix'
