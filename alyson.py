@@ -1,20 +1,15 @@
 import boto3
 
-ec2 = boto3.resource('ec2')
+# Create EC2 client
+ec2 = boto3.client('ec2')
 
-# Create 3 instances
-instances = ec2.create_instances(
-        ImageId="ami-08a52ddb321b32a8c",
-        MinCount=3,
-        MaxCount=3,
-        InstanceType="t2.micro",
-        SubnetId='subnet-064a5001084e7d154'
-    )
+# Stop instances
+response = ec2.stop_instances(
+    InstanceIds=['i-03614d0b96022ce74', 'i-0a73d63de0b3f6360', 'i-008b223612674086d']
+)
 
-# Print instance IDs
-for instance in instances:
-    print(instance.id)
-
+# Print response
+print(response)
 
 
 
